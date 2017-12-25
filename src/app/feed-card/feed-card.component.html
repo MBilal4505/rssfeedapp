@@ -1,0 +1,17 @@
+<div class="card-feed-entry container panel panel-default">
+  <div class="pointer-cursor" (click)="openLinkInBrowser()"><h1>{{feed.title}}</h1></div>
+  <div class="panel-body">
+  <div><p>{{feed.author}} - {{ feed.pubDate }}</p></div>
+  <div><p>{{feed.description | stripHtmlTags}}</p></div>
+</div>
+</div>
+
+
+<!--md-card from Material Design import -->
+<!-- internet explore doesn't like the date pipe:
+
+<md-card-subtitle>{{feed.author}} - {{feed.pubDate | date:'dd-MM-yyyy'}}</md-card-subtitle>
+
+<md-card-subtitle>{{feed.author}} - {{ feed.pubDate | date : 'mediumDate' }}</md-card-subtitle>
+
+-->
