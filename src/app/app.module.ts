@@ -22,12 +22,14 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
+import { FeedformComponent } from './feedform/feedform.component';
 
 const appRoutes : Routes  = [
 {path:'', component:DashboardComponent},
 {path:'login', component:LoginComponent},
 {path:'register', component:RegisterComponent},
-{path:'profile', component:ProfileComponent}
+{path:'profile', component:ProfileComponent},
+{path:'feedform', component:FeedformComponent}
 ];
 
 @NgModule({
@@ -39,7 +41,8 @@ const appRoutes : Routes  = [
     LoginComponent,
     RegisterComponent,
     NavbarComponent,
-    ProfileComponent
+    ProfileComponent,
+    FeedformComponent
     // MdSpinner
   ],
   imports: [
