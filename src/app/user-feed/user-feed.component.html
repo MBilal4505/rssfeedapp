@@ -1,0 +1,9 @@
+<div color="primary" class="container text-center">
+	<br><br>
+  <span><button class="btn btn-success" (click)="refreshFeed()"> Refresh </button></span> 
+</div>
+
+<!-- <div>
+	<p *ngIf="!feeds.length"> Cannot Read the feed</p>
+</div> -->
+<app-feed-card *ngFor="let feed of feeds" [feed]="feed"></app-feed-card>

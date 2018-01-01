@@ -9,20 +9,33 @@ import { AuthService } from '../services/auth.service';
 })
 export class FeedformComponent implements OnInit {
 	link: String;
-
+	user_id: String;
+	email: String;
+	user:any;
   constructor(private flashMessage: FlashMessagesService,
   			  private authService: AuthService,
   			  private router: Router) { }
 
   ngOnInit() {
+  	this.authService.getProfile().subscribe(profile => {
+  			this.user = profile.user;
+  			console.log('User contains following data',this.user);
+  		},
+  		err=> {
+  			//console.log('This comes here',err);
+  			return false;
+  		});
   }
 
   onLinkSubmit(){
-  	const user = {
-	link: this.link
+  	const link = {
+  	email: this.user.email,
+	link: this.link,
+	user_id: this.user._id
+
 	}
-  //Register User
-    this.authService.addLink(user).subscribe(data => {
+  //Register Link
+    this.authService.addLink(link).subscribe(data => {
       if (data.success) {
         this.flashMessage.show('You Have added Link Successfully', {cssClass:'alert-success', timeout: 3000});
         this.router.navigate(['/profile']);

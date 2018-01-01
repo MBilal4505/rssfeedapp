@@ -23,6 +23,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
 import { FeedformComponent } from './feedform/feedform.component';
+import { UserFeedComponent } from './user-feed/user-feed.component';
 
 const appRoutes : Routes  = [
 {path:'', component:DashboardComponent},
@@ -42,7 +43,8 @@ const appRoutes : Routes  = [
     RegisterComponent,
     NavbarComponent,
     ProfileComponent,
-    FeedformComponent
+    FeedformComponent,
+    UserFeedComponent
     // MdSpinner
   ],
   imports: [
