@@ -41,14 +41,17 @@ getProfile(){
 getUserFeed(){
 	let headers = new Headers();
 	this.loadToken();
-	this.loadUser();
-	console.log( 'User comes here',this.user._id);
-	//console.log( 'Token comes here' ,this.authToken);
+	var abc = this.loadUser(name);
+	JSON.parse(abc).id;
+	abc = JSON.parse(abc).id;
+	console.log('The abc contains',abc);
+	console.log( 'Token comes here' ,this.authToken);
+	//console.log( 'User comes here',this.loadUser);
 	//headers.append('Authorization', this.user);
 	headers.append('Authorization', this.authToken);
 	headers.append('content-Type','application/json');
-	return this.http.get('http://localhost:3000/users/userfeed?id=' + this.user._id, {headers: headers})
-	.map(res => res.json());	
+	return this.http.get('http://localhost:3000/users/userfeed?id=abc', {headers: headers})
+	.map(res => abc);	
 }
 storeUserData(token, user){
 	localStorage.setItem('id_token', token);
@@ -56,9 +59,11 @@ storeUserData(token, user){
 	this.authToken = token;
 	this.user = user;
 }
-loadUser(){
+loadUser(name){
 	const user = localStorage.getItem('user');
 	this.user = user;
+	//console.log('The user has these values', this.user);
+	return this.user;
 }
 loadToken(){
 	const token = localStorage.getItem('id_token');
