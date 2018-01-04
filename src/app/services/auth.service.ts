@@ -40,8 +40,8 @@ getProfile(){
 	.map(res => res.json());	
 }
 getUserFeed(){
-	let headers = new Headers();
-	this.loadToken();
+	//let headers = new Headers();
+	//this.loadToken();
 	var abc = this.loadUser(name);
 	JSON.parse(abc).id;
 	 abc = JSON.parse(abc).id;
@@ -50,8 +50,8 @@ getUserFeed(){
 	//console.log( 'User comes here',this.loadUser);
 	//headers.append('Authorization', this.authToken);
 	// headers.append('application/json');
-	return this.http.get('http://localhost:3000/users/userfeed/', abc)
-	.map(res => abc);	
+	return this.http.get('http://localhost:3000/users/userfeed/' + abc)
+	.map(res => res.json());	
 }
 storeUserData(token, user){
 	localStorage.setItem('id_token', token);

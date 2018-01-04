@@ -31,10 +31,10 @@ export class UserFeedComponent implements OnInit {
   	 //Get user data
     this.authService.getUserFeed().subscribe(userfeed => {
   			this.feed = userfeed.feed;
-  			// console.log('This user has the following data',this.feed);
+  			console.log('This user has the following data',this.feed);
   		},
   		err=> {
-  			//console.log('This comes here',err);
+  			console.log('This comes here',err);
   			return false;
   		});
   }
