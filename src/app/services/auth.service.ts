@@ -7,6 +7,7 @@ import 'rxjs/add/operator/map';
 export class AuthService {
  authToken: any;
  user: any;
+ abc:any;
   constructor(private http:Http) { }
 registerUser(user){
 	let headers = new Headers();
@@ -43,14 +44,13 @@ getUserFeed(){
 	this.loadToken();
 	var abc = this.loadUser(name);
 	JSON.parse(abc).id;
-	abc = JSON.parse(abc).id;
+	 abc = JSON.parse(abc).id;
 	console.log('The abc contains',abc);
-	console.log( 'Token comes here' ,this.authToken);
+	//console.log( 'Token comes here' ,this.authToken);
 	//console.log( 'User comes here',this.loadUser);
-	//headers.append('Authorization', this.user);
-	headers.append('Authorization', this.authToken);
-	headers.append('content-Type','application/json');
-	return this.http.get('http://localhost:3000/users/userfeed?id=abc', {headers: headers})
+	//headers.append('Authorization', this.authToken);
+	// headers.append('application/json');
+	return this.http.get('http://localhost:3000/users/userfeed/', abc)
 	.map(res => abc);	
 }
 storeUserData(token, user){

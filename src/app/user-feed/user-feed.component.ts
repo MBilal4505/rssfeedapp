@@ -16,7 +16,7 @@ export class UserFeedComponent implements OnInit {
   // if necessary, process the required link on this page:
   // https://rss2json.com and use the rss_url
   /*private feedUrl: string = 'http%3A%2F%2Fwww.20min.ch%2Frss%2Frss.tmpl%3Ftype%3Dchannel%26get%3D20%26lang%3Dro';*/
-  private feedUrl: string = 'https://css-tricks.com/feed/';
+  private feedUrl: string = 'http://rss.cnn.com/rss/edition_asia.rss';
   /*private feedUrl: string = 'https://www.becompany.ch/en/blog/feed.xml';*/
   //private feedUrl: string = 'https://techcrunch.com/feed/';
   /*private feedUrl: string = 'http://www.rockclimbing.com/rss/routes/ascents/new.xml';*/
