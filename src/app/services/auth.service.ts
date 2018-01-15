@@ -8,6 +8,7 @@ export class AuthService {
  authToken: any;
  user: any;
  abc:any;
+ feed:any;
   constructor(private http:Http) { }
 registerUser(user){
 	let headers = new Headers();
@@ -43,13 +44,13 @@ getUserFeed(){
 	//let headers = new Headers();
 	//this.loadToken();
 	var abc = this.loadUser(name);
-	JSON.parse(abc).id;
-	 abc = JSON.parse(abc).id;
-	console.log('The abc contains',abc);
+	JSON.parse(abc).email;
+	 abc = JSON.parse(abc).email;
+	//console.log('The abc contains',abc);
 	//console.log( 'Token comes here' ,this.authToken);
 	//console.log( 'User comes here',this.loadUser);
 	//headers.append('Authorization', this.authToken);
-	// headers.append('application/json');
+	 //headers.append('content-Type','application/json');
 	return this.http.get('http://localhost:3000/users/userfeed/' + abc)
 	.map(res => res.json());	
 }

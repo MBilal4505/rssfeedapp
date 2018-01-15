@@ -19,7 +19,7 @@ export class FeedformComponent implements OnInit {
   ngOnInit() {
   	this.authService.getProfile().subscribe(profile => {
   			this.user = profile.user;
-  			console.log('User contains following data',this.user);
+  			//console.log('User contains following data',this.user);
   		},
   		err=> {
   			//console.log('This comes here',err);
